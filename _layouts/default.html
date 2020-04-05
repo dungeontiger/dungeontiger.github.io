@@ -11,7 +11,7 @@
       function country_handler(country) {
           // sets the country cookie which is read in the country.html page
           // this is used to show data for a particular country without creating a bunch of specific pages
-          $.cookie("country", country)
+          Cookies.set("country", country)
           // show the country page
           window.location.href = "country.html"
       }
@@ -20,7 +20,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">COVID by DT</a>
+      <a class="navbar-brand" href="#">COVID-19 by DT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,18 +34,24 @@
             <a class="nav-link" href="world.html">World</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:country_handler('canada')">Canada</a>
+            <a class="nav-link" href="javascript:country_handler('Canada')">Canada</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:country_handler('united states')">United States</a>
+            <a class="nav-link" href="javascript:country_handler('US')">United States</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Other
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="country.html">By Country</a>
+              <a class="dropdown-item" href="javascript:country_handler('Canada')">Canada</a>
+              <a class="dropdown-item" href="javascript:country_handler('US')">United States</a>
+              <a class="dropdown-item" href="javascript:country_handler('China')">China</a>
+              <a class="dropdown-item" href="javascript:country_handler('Italy')">Italy</a>
+              <a class="dropdown-item" href="javascript:country_handler('Brazil')">Brazil</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="top5countries.html">Top 5 Countries</a>
+              <a class="dropdown-item" href="country.html">More Countries</a>
             </div>
           </li>
           <li class="nav-item">

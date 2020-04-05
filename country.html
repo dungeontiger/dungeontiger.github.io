@@ -2,8 +2,10 @@
 layout: default
 title: COVID-19 Charts for a Country
 ---
+    <div class="container" id="container">
+
+    </div>
     <script>
-        console.log($.cookie)
+        country = Cookies.get('country')
+        $('#' + country).append('<img src="images/' + country + '_cases.png>"')
     </script>
-    <h2>{Country} Charts</h2>
-    <p>TODO: Charts for a specific parameterized country.</p>
