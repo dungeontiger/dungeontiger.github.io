@@ -13,16 +13,13 @@
     <script>
      // when the page loads draw the charts for canada
       $(document).ready(function () {
-        drawChart('Canada');
+        init();
       });
     </script>
-    <style>
-      .collapse { display:none; }
-    </style>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">COVID-19 by DT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:drawChart('World')">World</a>
@@ -42,32 +39,21 @@
           <li class="nav-item">
             <a class="nav-link" href="javascript:drawChart('US')">United States</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="javascript:drawChart('Canada')">Canada</a>
-              <a class="dropdown-item" href="javascript:drawChart('US')">United States</a>
-              <a class="dropdown-item" href="javascript:drawChart('China')">China</a>
-              <a class="dropdown-item" href="javascript:drawChart('Italy')">Italy</a>
-              <a class="dropdown-item" href="javascript:drawChart('Brazil')">Brazil</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="all_countries.html">Other Countries...</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
+            <li>
+                <select id="countrySelect" class="custom-select" onchange="onSelectCountry()">
+                </select>
+            </li>
         </ul>
+        <a class="nav-item" href="about.html">About</a>
       </div>
     </nav>
 
     <div class="container">
       {{ content }}
     </div>
+    <footer class="container" style="margin-bottom:10px">
+      <hr/>
+      <small class="text-muted">Contact <a href="mailto:stephen.d.gibson@gmail.com">Stephen D. Gibson</a></small>
+    </footer>
   </body>
-
-  <footer class="container" style="margin-bottom:10px">
-    <hr/>
-    <small class="text-muted">Contact <a href="mailto:stephen.d.gibson@gmail.com">Stephen D. Gibson</a></small>
-  </footer>
 </html>
