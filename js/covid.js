@@ -13,8 +13,8 @@ function onSelectCountry() {
 }
 
 function init() {
-    // default to Canada
-    var country = 'Canada'
+    // default to World
+    var country = 'World'
     // get the current country by looking on the URL, ?country=country_id
     var re = /\?(.*)=(.*)/;
     var groups = re.exec(window.location.href);
