@@ -25,5 +25,7 @@ function init() {
             }
         }
     });
-    drawChart(country);
+    if ($('chartContainer')){
+        drawChart(country);
+    }
 }
