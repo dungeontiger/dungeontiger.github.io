@@ -2,6 +2,8 @@ function drawChart(country) {
     // make a get request for the canada spec and draw it when ready
     $.getJSON('https://raw.githubusercontent.com/dungeontiger/covid/master/specs/' + country + '_cases.json', function(spec) {
         Plotly.newPlot('chartContainer', spec.data, spec.layout);
+        // update the show as image link
+        $('#viewImage').attr('href', 'https://github.com/dungeontiger/covid/raw/master/images/' + country + '_cases.png');
     });
 }
 
