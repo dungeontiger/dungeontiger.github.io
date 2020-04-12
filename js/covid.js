@@ -23,6 +23,8 @@ function init() {
     }
     // get the list of countries and populate a dropdown
     $.getJSON('https://raw.githubusercontent.com/dungeontiger/covid/master/specs/countries.json', function(data) {
+        // first add an entry for world at the beginning
+        $('#countrySelect').append('<option selected value="World">World</option>\n');
         for (c in data) {
             if (data[c] == country) {
                 $('#countrySelect').append('<option selected value="' + data[c].replace(' ', '-') + '">' + data[c] + '</option>\n');
