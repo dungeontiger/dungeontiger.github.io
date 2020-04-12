@@ -13,8 +13,14 @@ function onSelectCountry() {
 }
 
 function init() {
-    // get the current country, for now Canada
+    // default to Canada
     var country = 'Canada'
+    // get the current country by looking on the URL, ?country=country_id
+    var re = /\?(.*)=(.*)/;
+    var groups = re.exec(window.location.href);
+    if (groups != null) {
+        country = groups[2];
+    }
     // get the list of countries and populate a dropdown
     $.getJSON('https://raw.githubusercontent.com/dungeontiger/covid/master/specs/countries.json', function(data) {
         for (c in data) {
@@ -25,7 +31,13 @@ function init() {
             }
         }
     });
-    if ($('chartContainer')){
+    if ($('#chartContainer').length){
+        // we only want to draw the chart if there is a container on this page
         drawChart(country);
     }
 }
+
+// when the page has finished loading, call init
+$(document).ready(function () {
+    init();
+});
