@@ -9,11 +9,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="js/covid.js"></script>
+    <script src="../js/covid.js"></script>
     <script>
      // when the page loads draw the charts for canada
       $(document).ready(function () {
-        init();
+        //init();
       });
     </script>
   </head>
@@ -44,15 +44,32 @@
                 </select>
             </li>
         </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="hrlp.html">Help</a></li>
-        </ul>
+        <a class="nav-item" href="about.html">About</a>
       </div>
     </nav>
-    
+
     <div class="container">
-      {{ content }}
+      <h2 style="margin-top:10px;">(TEST) COVID-19 Charts by DungeonTiger Help</h2>
+      <h5 style="margin-top:20px;">Navigation</h5>
+      <p>The navigation bar at the top of the site is your primary means of getting around.</p>
+      <img style="margin:20px;border:solid silver 1px" src='../images/navbar.png'/>
+      <p><a href="index.html">Home</a> will take you to main page.  World will show you summarizes for all countries, while clicking on a
+      country name will take you to that country's page.  The drop down contains all the countries for which there is
+      data.  Again, selecting one will take you to that country.</p>
+      <p>At the far right of the navigation bar, <a href="about.html">About</a> provides information about the site and the author,
+      while <a href="help.html">Help</a> takes you to this page.</p>
+      <img style="margin:20px;border:solid silver 1px" src="../images/right_navbar.png">
+      <h5>Charts</h5>
+      <p>You can hover over a chart to see specific values for those data points.</p>
+      <img style="margin:20px;border:solid silver 1px" src="../images/hover.png">
+      <p>At the bottom of each chart is information about when it was last updated and where the data came from.</p>
+      <img style="margin:20px;border:solid silver 1px" src="../images/date.png"/>
+      <p>The charts are drawn with interactive JavaScript.  However, each page has a link to the static image version of
+      the chart.  Clicking the link will open a new tab with that image.</p>
+      <img style="margin:20px;border:solid silver 1px" src="../images/viewImage.png">
+      <p>Hovering over the chart also provides the <a href="https://plotly.com/">Plotly</a> chart toolbar.  If you don't know what that is I suggest you don't
+      use it.  It is intended for advanced users.</p>
+      <img style="margin:20px;border:solid silver 1px" src="../images/plotlyToolbar.png">
     </div>
     <footer class="container" style="margin-bottom:10px">
       <hr/>
